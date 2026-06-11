@@ -18,12 +18,6 @@ class OrderIntegrationTest {
     @Autowired
     MockMvc mockMvc;
 
-    @Autowired
-    ObjectMapper mapper;
-
-    @Autowired
-    OrderRepository repository;
-
     @Test
     void applicationLoads() throws Exception {
 
