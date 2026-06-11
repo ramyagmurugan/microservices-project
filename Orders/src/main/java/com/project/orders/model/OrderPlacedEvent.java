@@ -14,4 +14,6 @@ public class OrderPlacedEvent {
     private String email_id;
     private String product_name;
 
+    public OrderPlacedEvent(Long orderId, Long userId, String emailId, String roles, String productName) {
+    }
 }
