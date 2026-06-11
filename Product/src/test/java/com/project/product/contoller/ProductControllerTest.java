@@ -16,8 +16,10 @@ import static org.mockito.Mockito.when;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 
 @WebMvcTest(ProductController.class)
+@WithMockUser
 class ProductControllerTest {
 
     @Autowired
@@ -41,15 +43,15 @@ class ProductControllerTest {
                 .thenReturn(product);
 
         mockMvc.perform(post("/product/addProduct")
+                        .with(csrf())
                         .contentType(APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(product)))
                 .andExpect(status().isOk());
     }
 
     @Test
-    @WithMockUser(roles = "USER")
+    @WithMockUser
     void getProducts() throws Exception {
-
         when(productService.getProducts())
                 .thenReturn(Collections.emptyList());
 

@@ -14,9 +14,10 @@ import java.util.Collections;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
+@WithMockUser
 @WebMvcTest(UserController.class)
 class UserControllerTest {
 
@@ -41,6 +42,7 @@ class UserControllerTest {
                 .thenReturn(user);
 
         mockMvc.perform(post("/users/createuser")
+                        .with(csrf())
                         .contentType(APPLICATION_JSON)
                         .content(mapper.writeValueAsString(user)))
                 .andExpect(status().isOk());
@@ -48,9 +50,8 @@ class UserControllerTest {
 
     @Test
     @WithMockUser
-    void getAllUsers() throws Exception {
-
-        when(userService.getAllUsers())
+    void getUsers() throws Exception {
+        when(userService.getAllUsers() )
                 .thenReturn(Collections.emptyList());
 
         mockMvc.perform(get("/users/getusers"))
