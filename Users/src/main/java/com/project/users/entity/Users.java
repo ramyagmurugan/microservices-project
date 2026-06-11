@@ -2,10 +2,6 @@ package com.project.users.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.hibernate.id.IdentityGenerator;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Data

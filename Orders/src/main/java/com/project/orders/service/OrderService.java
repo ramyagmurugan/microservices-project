@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.logging.Logger;
 @Slf4j
 @Service
 public class OrderService {
@@ -62,8 +61,7 @@ public class OrderService {
     }
 
     public String fallbackMethod(Orders orders,Exception ex) {
-        ex.printStackTrace();
-        return "Fallback triggered because: " + ex.getMessage();
+         return "Fallback triggered because: " + ex.getMessage();
     }
 
     public List<Orders> getAllOrders() {

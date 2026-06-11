@@ -249,14 +249,6 @@ Ensure JWT token is valid and Auth Server is running.
 
 Permit Swagger endpoints in Security Configuration:
 
-```java
-.requestMatchers(
-    "/swagger-ui.html",
-    "/swagger-ui/**",
-    "/v3/api-docs/**"
-).permitAll()
-```
-
 ---
 
 ## Kafka Connection Error

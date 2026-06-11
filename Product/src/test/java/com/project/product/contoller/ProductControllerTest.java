@@ -1,7 +1,6 @@
 package com.project.product.contoller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.project.product.contoller.ProductController;
 import com.project.product.entity.Products;
 import com.project.product.service.ProductService;
 import org.junit.jupiter.api.Test;

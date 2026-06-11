@@ -1,7 +1,6 @@
 package com.project.product.entity;
 
 import jakarta.persistence.*;
-import jdk.jfr.DataAmount;
 import lombok.Data;
 
 @Entity

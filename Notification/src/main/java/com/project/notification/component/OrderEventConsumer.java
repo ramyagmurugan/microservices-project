@@ -7,8 +7,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
-import java.util.logging.Logger;
-
 @Component
 @RequiredArgsConstructor
 @Slf4j
